@@ -3,9 +3,15 @@
 }
 
 .main__table {
-    margin: 0 auto;
+    margin: 50px auto;
+}
+
+.main__table-header {
+    padding: 30px auto;
 }
 
 .main__table-text {
     color: #FFF;
+
+    border: 1px solid rgba(84, 84, 84, 0.7);
 }

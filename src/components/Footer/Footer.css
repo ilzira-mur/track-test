@@ -1,10 +1,11 @@
 .footer {
     margin: 0 auto;
     max-width: 880px;
+    border-top: 1px solid rgba(84, 84, 84, 0.7);
   }
 
 .footer__text {
-    margin-top: 67px;
+    margin-top: 25px;
     margin-bottom: 60px;
     font-style: normal;
     font-weight: normal;
