@@ -1,13 +1,28 @@
 import React from "react";
 import './Main.css';
-import initialTracks from "../../utils/utils";
 import Track from '../Track/Track';
+import { useRef } from 'react';
 
-function Main() {
-    console.log(initialTracks)
+function Main({ isAdminMode, onCheckbox, tracks, handleTrackDelete }) {
+    const checked = useRef()
+    
+
+    function handleCheckbox() {
+        onCheckbox();
+    }
+
+console.log(isAdminMode)
+
     return (
-        <main>
-            <section>
+        <main className="main">
+            <section className="main__block">
+                <div className="main__container">
+                    <input onClick={handleCheckbox} type="checkbox" className="main__input" name="checkbox" id="checkbox" ref={checked} defaultChecked></input>
+                    <label className="main__label" htmlFor="checkbox">admin mode</label>
+                </div>
+                <div className={`main__buttons ${isAdminMode ? "main__button_visible" : "main__button_unvisible"}`}>
+                    <button className="main__button">Новая заявка</button>
+                </div>
             </section>
             <section>
                 <table className="main__table">
@@ -20,10 +35,11 @@ function Main() {
                             <th className="main__table-text">Телефон перевозчика</th>
                             <th className="main__table-text">Комментарии</th>
                             <th className="main__table-text">ATI код</th>
+                            <th className="main__table-text">admin</th>
                         </tr>
                     </thead>
                     <tbody>
-                            {initialTracks.map(track => (<Track key={track.id} track={track}/>))}
+                            {tracks.map(track => (<Track key={track.id} track={track} isAdminMode={isAdminMode} handleTrackDelete={handleTrackDelete}/>))}
                     </tbody>
                 </table>
             </section>

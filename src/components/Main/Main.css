@@ -1,5 +1,75 @@
 .main {
+    margin: 0 auto;
+}
 
+.main__block {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.main__container{
+    margin: 10px auto 0 0;
+    padding-left: 100px;
+    padding-bottom: 0;
+    height: 50px;
+}
+
+.main__input {
+    display: none;
+}
+
+.main__label {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #FFF;
+}
+
+.main__input + label {
+    position: relative;
+    display: block;
+    padding-left: 48px;
+    cursor: pointer;
+}
+
+.main__input + label:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 36px;
+    height: 20px;
+    background: #3ddc84;
+    border-radius: 20px;
+    border: none;
+    transition-delay: 100ms;
+    transition: background 100ms linear;
+}
+
+.main__input:checked + label::after {
+    background: #343434;
+}
+
+.main__input + label:before {
+    content: '';
+    position: absolute;
+    left: 22px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: #fff;
+    z-index: 1;
+    transition: left 100ms linear;
+}
+
+.main__input:checked + label:before {
+    left: 6px;
 }
 
 .main__table {
@@ -12,6 +82,36 @@
 
 .main__table-text {
     color: #FFF;
-
     border: 1px solid rgba(84, 84, 84, 0.7);
+    height: 50px;
+    min-width: 150px;
+}
+
+.main__buttons {
+    margin: 0 auto;
+}
+
+.main__button {
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    color: #FFF;
+    border: 1px solid rgba(84, 84, 84, 0.7);
+    width: 150px;
+    height: 50px;
+}
+
+.main__button:hover {
+    opacity: 0.6;
+    transition: 0.1s linear;
+}
+
+.main__button_visible {
+    display: block;
+}
+
+.main__button_unvisible {
+    display: none;
 }

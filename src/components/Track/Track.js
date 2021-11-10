@@ -1,11 +1,8 @@
 import React from 'react';
 import './Track.css';
-import initialTracks from '../../utils/utils';
 
-function Track({track}) {
+function Track({track, isAdminMode, handleTrackDelete}) {
 
-    console.log(track.id)
-console.log(initialTracks)
     return(
         <tr className="track__tr">
             <td className="track__text">{track.id}</td>
@@ -15,6 +12,10 @@ console.log(initialTracks)
             <td className="track__text">{track.phone}</td>
             <td className="track__text">{track.comment}</td>
             <td className="track__text"><a className="track__link" target="blank" href={`https://ati.su/firms/${track.ati}/info`}>{track.ati}</a></td>
+            <td className={`main__buttons ${isAdminMode ? "main__button_visible" : "main__button_unvisible"}`}>
+                <button className="track__button">Редактировать</button>
+                <button className="track__button" onClick={handleTrackDelete}>Удалить</button>
+            </td>
         </tr>
     );
 }
